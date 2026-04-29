@@ -69,7 +69,7 @@ const config = {
     {
       header: "🎂 THE AUDACITY TO AGE THIS GRACEFULLY",
       content:
-        "25 and still getting carded? Sure, Jan. But honestly, the way you refuse to age like a normal person is both inspirational and deeply unfair. Whatever skincare routine the universe gave you, I need the link.",
+        "25 and still getting carded? Sure, Bimi. But honestly, the way you refuse to age like a normal person is both inspirational and deeply unfair. Whatever way you are aging its envious.",
     },
     {
       header: "✨ AN UNCOMFORTABLY HONEST REVIEW",
@@ -79,7 +79,7 @@ const config = {
     {
       header: "💛 THE ONE WHERE I GET SENTIMENTAL (don't tell anyone)",
       content:
-        "Every photo with you is my favorite photo. Every movie night turns into a therapy session with snacks. Every playlist you make ruins every other playlist forever. You make the world a softer, funnier, warmer place just by showing up. Now stop reading this and go eat your cake before I take it back. 🎂",
+        "Every photo with you is my favorite photo. Every movie night turns into a therapy session with snacks. Every playlist you make ruins every other playlist forever. You make the world a softer, funnier, warmer place just by showing up. Now stop reading this and go eat your cake. 🎂",
     },
   ],
 
