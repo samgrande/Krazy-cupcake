@@ -7,10 +7,7 @@ const funkyColors = ["#FFD93D", "#FF6B6B", "#6BCB77", "#FFB347"];
 const funkyEmojis = ["🎉", "📊", "📸", "💌"];
 
 export default function Navbar() {
-  const [openIndex, setOpenIndex] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   const scrollTo = (target) => {
     const el = document.getElementById(target);
@@ -19,13 +16,6 @@ export default function Navbar() {
       setMobileOpen(false);
     }
   };
-
-  const descriptions = [
-    `${config.name} made it to ${config.age}!! LET'S GOOOO 🔥`,
-    "The numbers don't lie bestie",
-    "Our cutest moments, pinned forever",
-    "Warning: might make you cry (good tears)",
-  ];
 
   return (
     <>
@@ -71,7 +61,6 @@ export default function Navbar() {
                 <button
                   className={styles.navButton}
                   onClick={() => {
-                    toggle(i);
                     scrollTo(item.target);
                   }}
                   style={{ "--accent": funkyColors[i] }}
@@ -80,28 +69,7 @@ export default function Navbar() {
                     {funkyEmojis[i]}
                   </span>
                   <span className={styles.navLabel}>{item.label}</span>
-                  <span
-                    className={`${styles.navIcon} ${openIndex === i ? styles.navIconOpen : ""}`}
-                  >
-                    +
-                  </span>
                 </button>
-
-                <AnimatePresence>
-                  {openIndex === i && (
-                    <motion.div
-                      className={styles.navContent}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                    >
-                      <div className={styles.navContentInner}>
-                        {descriptions[i]}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </motion.div>
             ))}
           </div>
