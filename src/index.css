@@ -1,0 +1,208 @@
+/* ============================================
+   Global Styles — Messy, Warm, Alive Birthday
+   ============================================ */
+
+:root {
+  /* Warm Palette */
+  --bg-cream: #FFF8F0;
+  --bg-dark: #1A0A00;
+  --bg-dark-soft: #2D1810;
+  --primary-coral: #E8845C;
+  --accent-rosegold: #D4A574;
+  --highlight-amber: #FFB347;
+  --text-brown: #3D1C00;
+  --text-light: #FFF0E0;
+  --subtle-wheat: #F5DEB3;
+  --subtle-pink: #FADADD;
+  --border-warm: #E8D5C4;
+  --shadow-warm: rgba(232, 132, 92, 0.15);
+  --pop-red: #FF6B6B;
+  --pop-yellow: #FFD93D;
+  --pop-green: #6BCB77;
+
+  /* Fonts */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-handwritten: 'Caveat', cursive;
+  --font-scrawl: 'Homemade Apple', cursive;
+
+  /* Layout */
+  --nav-width: 300px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-cream);
+  color: var(--text-brown);
+  line-height: 1.6;
+  overflow-x: hidden;
+  margin: 0;
+  /* Subtle paper texture */
+  background-image: 
+    radial-gradient(ellipse at 20% 50%, rgba(255, 180, 130, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(250, 218, 221, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(255, 179, 71, 0.06) 0%, transparent 50%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-cream); }
+::-webkit-scrollbar-thumb {
+  background: var(--primary-coral);
+  border-radius: 10px;
+  border: 2px solid var(--bg-cream);
+}
+
+::selection {
+  background: var(--pop-yellow);
+  color: var(--text-brown);
+}
+
+a {
+  color: var(--primary-coral);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--highlight-amber);
+  text-decoration: underline wavy var(--primary-coral);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Layout — sidebar + main like reference */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  width: var(--nav-width);
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+.app-main {
+  flex: 1;
+  margin-left: var(--nav-width);
+  position: relative;
+}
+
+/* Scroll progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: var(--nav-width);
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-coral), var(--pop-yellow), var(--pop-red));
+  transform-origin: left;
+  z-index: 1000;
+}
+
+/* Cursor sparkle container */
+.sparkle-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Tape decoration */
+.tape {
+  display: inline-block;
+  background: rgba(255, 217, 61, 0.5);
+  padding: 2px 20px;
+  transform: rotate(-2deg);
+  font-family: var(--font-handwritten);
+  font-size: 0.9rem;
+  color: var(--text-brown);
+  position: relative;
+}
+
+.tape::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 8px,
+    rgba(255, 255, 255, 0.3) 8px,
+    rgba(255, 255, 255, 0.3) 10px
+  );
+}
+
+/* Sticker decoration */
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  position: absolute;
+  filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.15));
+  animation: stickerFloat 3s ease-in-out infinite;
+}
+
+@keyframes stickerFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-1deg); }
+  25% { transform: rotate(1.5deg); }
+  50% { transform: rotate(-0.5deg); }
+  75% { transform: rotate(1deg); }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(232, 132, 92, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(232, 132, 92, 0.4); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  :root { --nav-width: 0px; }
+  .app-layout { flex-direction: column; }
+  .app-sidebar { position: relative; width: 100%; height: auto; }
+  .app-main { margin-left: 0; }
+  .scroll-progress { left: 0; }
+}

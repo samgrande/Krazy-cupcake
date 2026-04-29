@@ -1,0 +1,82 @@
+/* AudioPlayer — playful, handwritten, messy */
+.audioSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+  background: var(--bg-cream);
+  gap: 1.2rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.audioSection::before,
+.audioSection::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--primary-coral) 0px, var(--primary-coral) 8px,
+    transparent 8px, transparent 14px
+  );
+}
+
+.audioSection::before { top: 0; }
+.audioSection::after { bottom: 0; }
+
+.playerBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-coral);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: 3px solid var(--text-brown);
+  box-shadow: 3px 4px 0px var(--text-brown);
+  transition: all 0.2s;
+}
+
+.playerBtn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 6px 0px var(--text-brown);
+}
+
+.playerBtn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 2px 0px var(--text-brown);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 36px;
+}
+
+.bar {
+  width: 4px;
+  background: var(--primary-coral);
+  border-radius: 2px;
+}
+
+.barActive {
+  background: var(--pop-red);
+}
+
+.label {
+  font-family: var(--font-handwritten);
+  font-size: 1.2rem;
+  color: var(--text-brown);
+  transform: rotate(-2deg);
+}
+
+.musicNote {
+  font-size: 1.5rem;
+  display: inline-block;
+}

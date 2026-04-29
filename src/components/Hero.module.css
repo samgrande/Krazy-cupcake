@@ -1,0 +1,211 @@
+/* Hero — messy, alive, scrapbook feel */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-cream);
+  padding: 2rem;
+}
+
+/* Scribble/doodle border */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--primary-coral) 0px,
+    var(--primary-coral) 12px,
+    transparent 12px,
+    transparent 18px,
+    var(--highlight-amber) 18px,
+    var(--highlight-amber) 30px,
+    transparent 30px,
+    transparent 36px
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.greeting {
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--primary-coral);
+  font-weight: 400;
+  transform: rotate(-3deg);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 0.2rem 1rem;
+  border-radius: 4px;
+  border: 2px dashed var(--primary-coral);
+}
+
+.subtitle {
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  color: var(--accent-rosegold);
+  margin-top: 1rem;
+  transform: rotate(1deg);
+  font-weight: 400;
+}
+
+/* Giant age number */
+.ageBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.ageNumber {
+  font-family: var(--font-heading);
+  font-size: clamp(8rem, 25vw, 18rem);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--text-brown);
+  line-height: 0.85;
+  letter-spacing: -8px;
+  position: relative;
+  display: inline-block;
+}
+
+.ageNumber::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: -3%;
+  right: -3%;
+  height: 30%;
+  background: rgba(255, 217, 61, 0.35);
+  transform: rotate(-1deg) skewX(-5deg);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.ageLabel {
+  font-family: var(--font-handwritten);
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--primary-coral);
+  font-weight: 400;
+  transform: rotate(3deg);
+  display: inline-block;
+  margin-left: -0.5rem;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--text-brown);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  position: relative;
+  display: inline-block;
+  margin-top: -0.5rem;
+}
+
+.nameHighlight {
+  position: relative;
+  display: inline-block;
+}
+
+.nameHighlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  left: -5%;
+  right: -5%;
+  height: 35%;
+  background: rgba(255, 107, 107, 0.25);
+  transform: rotate(-1deg) skewX(-5deg);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.exclaim {
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 15vw, 12rem);
+  color: var(--pop-yellow);
+  opacity: 0.15;
+  position: absolute;
+  right: -2rem;
+  top: -1rem;
+  font-weight: 900;
+  line-height: 1;
+  z-index: 0;
+  transform: rotate(12deg);
+}
+
+/* Floating stickers around hero */
+.stickerWrap {
+  position: absolute;
+  z-index: 3;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.12));
+  font-size: 2.5rem;
+}
+
+.sticker1 { top: 8%; right: 10%; transform: rotate(15deg); }
+.sticker2 { bottom: 15%; left: 5%; transform: rotate(-20deg); }
+.sticker3 { top: 20%; left: 8%; transform: rotate(8deg); }
+.sticker4 { bottom: 8%; right: 15%; transform: rotate(-12deg); }
+.sticker5 { top: 50%; right: 5%; transform: rotate(25deg); }
+
+.scrollHint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-family: var(--font-handwritten);
+  font-size: 1rem;
+  color: var(--accent-rosegold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scrollArrow {
+  font-size: 1.5rem;
+}
+
+/* Handwritten side note */
+.sideNote {
+  position: absolute;
+  right: 2rem;
+  bottom: 30%;
+  font-family: var(--font-scrawl);
+  font-size: 0.75rem;
+  color: var(--accent-rosegold);
+  transform: rotate(5deg);
+  opacity: 0.6;
+  max-width: 150px;
+  line-height: 1.8;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .heroContent { padding: 0 1rem; text-align: left; }
+  .stickerWrap { font-size: 1.8rem; }
+  .sideNote { display: none; }
+  .exclaim { font-size: clamp(4rem, 20vw, 8rem); }
+  .ageNumber { letter-spacing: -4px; }
+}

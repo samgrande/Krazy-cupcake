@@ -1,0 +1,114 @@
+/* Footer — messy, warm, handmade feel */
+.footer {
+  padding: 5rem 3rem 3rem;
+  background: var(--bg-dark);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--primary-coral) 0px, var(--primary-coral) 8px,
+    transparent 8px, transparent 14px,
+    var(--highlight-amber) 14px, var(--highlight-amber) 22px,
+    transparent 22px, transparent 28px
+  );
+}
+
+.footerGlow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 200px;
+  background: radial-gradient(
+    ellipse,
+    rgba(232, 132, 92, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.footerMade {
+  font-family: var(--font-scrawl);
+  font-size: 0.7rem;
+  color: var(--accent-rosegold);
+  opacity: 0.5;
+  transform: rotate(-2deg);
+}
+
+.footerName {
+  font-family: var(--font-handwritten);
+  font-size: 2rem;
+  color: var(--highlight-amber);
+  transform: rotate(-1deg);
+}
+
+.footerDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--primary-coral);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.footerYear {
+  font-family: var(--font-handwritten);
+  font-size: 0.85rem;
+  color: var(--accent-rosegold);
+  opacity: 0.4;
+}
+
+.footerClosing {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--text-light);
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.footerClosing::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: var(--primary-coral);
+  border-radius: 2px;
+  transform: rotate(-1deg);
+}
+
+.footerDivider {
+  width: 50px;
+  height: 2px;
+  background: var(--accent-rosegold);
+  opacity: 0.2;
+  transform: rotate(2deg);
+}
+
+.footerEmoji {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .footer { padding: 3rem 1.5rem 2rem; }
+}

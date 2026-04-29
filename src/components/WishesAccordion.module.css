@@ -1,0 +1,107 @@
+/* WishesAccordion — messy, handwritten, alive */
+.wishesSection {
+  padding: 4rem 3rem;
+  background: var(--bg-cream);
+  position: relative;
+}
+
+.wishesSection::before {
+  content: '💌';
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 3rem;
+  opacity: 0.08;
+  transform: rotate(20deg);
+}
+
+.wishesHeader {
+  margin-bottom: 2.5rem;
+}
+
+.wishesTitle {
+  font-family: var(--font-handwritten);
+  font-size: 2rem;
+  color: var(--text-brown);
+  display: inline-block;
+  transform: rotate(-1deg);
+  position: relative;
+}
+
+.wishesTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--highlight-amber);
+  transform: rotate(0.5deg);
+  border-radius: 2px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+}
+
+.accordionItem {
+  border-top: 1px dashed var(--border-warm);
+}
+
+.accordionItem:last-child {
+  border-bottom: 1px dashed var(--border-warm);
+}
+
+.accordionButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 0;
+  font-family: var(--font-handwritten);
+  font-size: 1.15rem;
+  color: var(--text-brown);
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.accordionButton:hover {
+  color: var(--primary-coral);
+  transform: translateX(5px);
+}
+
+.accordionIcon {
+  font-size: 1.3rem;
+  color: var(--primary-coral);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  font-family: var(--font-body);
+}
+
+.accordionIconOpen {
+  transform: rotate(45deg);
+}
+
+.accordionContent {
+  overflow: hidden;
+}
+
+.accordionContentInner {
+  padding: 0 0 1.5rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-brown);
+  opacity: 0.75;
+  max-width: 550px;
+  border-left: 2px solid var(--subtle-pink);
+  padding-left: 1rem;
+}
+
+@media (max-width: 900px) {
+  .wishesSection { padding: 3rem 1.5rem; }
+  .wishesTitle { font-size: 1.5rem; }
+}

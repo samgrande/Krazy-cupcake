@@ -1,0 +1,147 @@
+/* Milestones — fun stats, dark bg, messy cards */
+.banner {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 3rem;
+  gap: 2rem;
+}
+
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(232, 132, 92, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(255, 179, 71, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-handwritten);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--highlight-amber);
+  position: relative;
+  z-index: 1;
+  transform: rotate(-2deg);
+  line-height: 1.2;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 80%;
+  height: 3px;
+  background: var(--primary-coral);
+  border-radius: 2px;
+  transform: rotate(0.5deg);
+}
+
+/* Stats grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+}
+
+.statCard {
+  background: rgba(255, 248, 240, 0.95);
+  border: 3px solid var(--text-brown);
+  border-radius: 4px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 4px 5px 0px var(--text-brown);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.statTape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 60px;
+  height: 18px;
+  background: rgba(255, 217, 61, 0.6);
+  border-radius: 1px;
+}
+
+.statNumber {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--primary-coral);
+  line-height: 1;
+  letter-spacing: -2px;
+  display: block;
+}
+
+.statLabel {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: var(--text-brown);
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.bannerSticker {
+  position: absolute;
+  z-index: 2;
+  font-size: 3.5rem;
+  filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+}
+
+.sticker1 { top: 10%; right: 8%; transform: rotate(15deg); }
+.sticker2 { bottom: 12%; right: 20%; transform: rotate(-10deg); }
+.sticker3 { bottom: 20%; left: 60%; transform: rotate(8deg); }
+
+.bannerSubtext {
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bannerNote {
+  font-family: var(--font-scrawl);
+  font-size: 0.85rem;
+  color: var(--accent-rosegold);
+  opacity: 0.6;
+  transform: rotate(2deg);
+  display: inline-block;
+}
+
+/* Dashed bottom border */
+.banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--highlight-amber) 0px, var(--highlight-amber) 12px,
+    transparent 12px, transparent 20px
+  );
+}
+
+@media (max-width: 900px) {
+  .banner { padding: 3rem 1.5rem; }
+  .bannerSticker { font-size: 2.5rem; }
+  .statsGrid { grid-template-columns: 1fr; gap: 1.5rem; max-width: 300px; }
+}
