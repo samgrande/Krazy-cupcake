@@ -165,3 +165,13 @@
 @media (max-width: 900px) {
   .footer { padding: 3rem 1.5rem 2rem; }
 }
+
+@media (max-width: 480px) {
+  .footer { padding: 2rem 1rem 1.5rem; gap: 0.8rem; }
+  .footerClosing { font-size: clamp(1.5rem, 6vw, 2rem); margin-top: 0.5rem; }
+  .timeUnit { font-size: clamp(1.2rem, 4vw, 1.8rem); padding: 0.3rem 0.8rem; border-width: 1px; }
+  .timeLabel { font-size: 0.9rem; }
+  .timeSep { font-size: 1.5rem; margin: 0 0.1rem; }
+  .footerName { font-size: 1.5rem; }
+  .footerEmoji { font-size: 1.5rem; }
+}

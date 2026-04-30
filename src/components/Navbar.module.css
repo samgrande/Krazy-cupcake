@@ -191,6 +191,23 @@
   }
 }
 
+@media (max-width: 480px) {
+  .sidebar {
+    width: 260px;
+    left: -260px;
+  }
+  .mobileToggle {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    top: 0.8rem;
+    left: 0.8rem;
+  }
+  .navTop { padding: 1.5rem 1rem 1rem; }
+  .brand { font-size: 1.4rem; margin-bottom: 1.5rem; }
+  .navButton { padding: 0.6rem; font-size: 0.85rem; }
+}
+
 @keyframes wobble {
   0%, 100% { transform: rotate(-3deg); }
   25% { transform: rotate(3deg); }

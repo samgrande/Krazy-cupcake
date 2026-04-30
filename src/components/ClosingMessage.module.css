@@ -111,3 +111,11 @@
   .quoteWrap { padding: 2.5rem 1.5rem 1.5rem; }
   .quoteMark, .quoteMarkEnd { font-size: 5rem; }
 }
+
+@media (max-width: 480px) {
+  .section { padding: 2rem 1rem; }
+  .quoteWrap { padding: 2rem 1rem 1rem; }
+  .quoteMark, .quoteMarkEnd { font-size: 3.5rem; }
+  .quoteText { font-size: clamp(1rem, 5vw, 1.3rem); }
+  .signature { font-size: 0.75rem; }
+}

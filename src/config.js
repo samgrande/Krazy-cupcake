@@ -80,7 +80,7 @@ const config = {
     {
       header: "🎂 THE AUDACITY TO AGE THIS GRACEFULLY",
       content:
-        `${calculatedAge} and still getting carded? Sure, Bimi. But honestly, the way you refuse to age like a normal person is both inspirational and deeply unfair. Whatever way you are aging its envious.`,
+        `${calculatedAge} and still getting carded? Sure, Dear. But honestly, the way you refuse to age like a normal person is both inspirational and deeply unfair. Whatever skincare routine the universe gave you, I need the link.`,
     },
     {
       header: "✨ AN UNCOMFORTABLY HONEST REVIEW",

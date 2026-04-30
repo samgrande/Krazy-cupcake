@@ -127,3 +127,12 @@
   .cardSection { padding: 3rem 1.5rem; }
   .card { transform: rotate(-1deg); }
 }
+
+@media (max-width: 480px) {
+  .cardSection { padding: 2rem 1rem; }
+  .card { padding: 1.5rem 1rem; max-width: 100%; }
+  .cardValueLarge { font-size: 2.5rem; }
+  .cardValue { font-size: 1.3rem; }
+  .cardType { font-size: 1.1rem; }
+  .doodleHeart { right: 5%; font-size: 1.5rem; }
+}

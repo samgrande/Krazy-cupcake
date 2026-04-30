@@ -257,11 +257,25 @@
 }
 
 @media (max-width: 700px) {
+  .gallerySection { padding: 3rem 1.5rem 5rem; }
   .galleryScatter {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+    gap: 1.2rem;
   }
-  .imageCard { padding: 5px 5px 25px; }
+  .imageCard { padding: 6px 6px 28px; }
   .galleryLabelText { font-size: 1.5rem; }
   .popupCard { max-width: 95%; padding: 8px 8px 40px; }
+}
+
+@media (max-width: 480px) {
+  .gallerySection { padding: 2rem 0.5rem 4rem; }
+  .galleryScatter {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+  .imageCard { padding: 4px 4px 22px; }
+  .caption { font-size: 0.75rem; bottom: 4px; }
+  .tape { width: 40px; height: 14px; }
+  .tapeTop { top: -6px; }
+  .tapeCorner { top: -4px; right: -6px; width: 35px; }
 }

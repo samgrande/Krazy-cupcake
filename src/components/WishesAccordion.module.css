@@ -105,3 +105,11 @@
   .wishesSection { padding: 3rem 1.5rem; }
   .wishesTitle { font-size: 1.5rem; }
 }
+
+@media (max-width: 480px) {
+  .wishesSection { padding: 2rem 1rem; }
+  .wishesTitle { font-size: 1.3rem; }
+  .accordionButton { font-size: 1rem; padding: 1rem 0; }
+  .accordionContentInner { font-size: 0.85rem; padding-left: 0.5rem; margin-left: 0.5rem; border-left-width: 1px; }
+  .accordionIcon { font-size: 1.1rem; margin-left: 0.5rem; }
+}

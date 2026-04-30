@@ -209,3 +209,12 @@
   .exclaim { font-size: clamp(4rem, 20vw, 8rem); }
   .ageNumber { letter-spacing: -4px; }
 }
+
+@media (max-width: 480px) {
+  .heroContent { padding: 0 0.5rem; }
+  .exclaim { font-size: clamp(3rem, 15vw, 5rem); }
+  .ageNumber { font-size: clamp(6rem, 20vw, 10rem); letter-spacing: -2px; }
+  .greeting { font-size: clamp(1.4rem, 3.5vw, 2rem); }
+  .name { font-size: clamp(2.5rem, 6vw, 4rem); }
+  .stickerWrap { font-size: 1.5rem; }
+}
