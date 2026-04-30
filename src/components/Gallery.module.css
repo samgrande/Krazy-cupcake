@@ -88,7 +88,7 @@
   height: 100%;
   border-radius: 2px;
   overflow: hidden;
-  background: linear-gradient(135deg, #FFE8D6, #FADADD, #FFF0E0);
+  background: linear-gradient(135deg, #f391a0, #ea3788, #b0228c);
   position: relative;
 }
 
@@ -134,7 +134,7 @@
   position: absolute;
   width: 60px;
   height: 18px;
-  background: rgba(255, 217, 61, 0.55);
+  background: rgba(234, 55, 136, 0.4);
   z-index: 10;
   border-radius: 1px;
 }
@@ -149,7 +149,7 @@
   justify-content: center;
   height: 100%;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #FFE8D6 0%, #FADADD 50%, #FFF0E0 100%);
+  background: linear-gradient(135deg, #f391a0 0%, #ea3788 50%, #b0228c 100%);
 }
 
 .placeholderIcon {
@@ -207,7 +207,7 @@
   left: 35%;
   width: 80px;
   height: 22px;
-  background: rgba(255, 217, 61, 0.6);
+  background: rgba(176, 34, 140, 0.4);
   transform: rotate(2deg);
   border-radius: 1px;
   z-index: 10;

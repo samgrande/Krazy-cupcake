@@ -13,16 +13,26 @@ import img8 from "./assets/IMG_1171.jpg";
 import img9 from "./assets/IMG_20260114_003552.jpg";
 import img10 from "./assets/IMG_6436.jpg";
 import img11 from "./assets/IMG_6484.jpg";
+import img12 from "./assets/IMG_8831.jpg";
 import audioFile from "./assets/on_melancholy_hill.mp3";
+
+const birthDate = new Date("2001-04-30");
+const currentDate = new Date();
+let calculatedAge = currentDate.getFullYear() - birthDate.getFullYear();
+const m = currentDate.getMonth() - birthDate.getMonth();
+if (m < 0 || (m === 0 && currentDate.getDate() < birthDate.getDate())) {
+  calculatedAge--;
+}
+const currentYear = currentDate.getFullYear();
 
 const config = {
   name: "Sayani",
-  date: "April 30, 2026",
-  age: 25,
+  date: `April 30, ${currentYear}`,
+  age: calculatedAge,
 
   // --- Hero Section ---
   hero: {
-    greeting: "Yoooooo guess who made it till 2026 ??",
+    greeting: `Yoooooo guess who made it till ${currentYear} ??`,
     subtitle: "this wonderful",
   },
 
@@ -49,15 +59,16 @@ const config = {
     { src: img9, alt: "Postcard 9", caption: "🧿" },
     { src: img10, alt: "Postcard 10", caption: "🪩" },
     { src: img11, alt: "Postcard 11", caption: "🤝" },
+    { src: img12, alt: "Postcard 12", caption: "✨" },
   ],
 
   // --- Birthday Card ---
   card: {
-    label: "Celebration",
-    table: "25",
-    type: "Birthday Party",
+    label: `Ticket No: ${String(calculatedAge).padStart(4, '0')}`,
+    table: String(calculatedAge),
+    type: "A milestone of a life",
     guest: "Sayani",
-    note: "( a love-shaped celebration )",
+    note: "( a celebration called life )",
   },
 
   // --- Audio ---
@@ -69,7 +80,7 @@ const config = {
     {
       header: "🎂 THE AUDACITY TO AGE THIS GRACEFULLY",
       content:
-        "25 and still getting carded? Sure, Bimi. But honestly, the way you refuse to age like a normal person is both inspirational and deeply unfair. Whatever way you are aging its envious.",
+        `${calculatedAge} and still getting carded? Sure, Bimi. But honestly, the way you refuse to age like a normal person is both inspirational and deeply unfair. Whatever way you are aging its envious.`,
     },
     {
       header: "✨ AN UNCOMFORTABLY HONEST REVIEW",
@@ -98,8 +109,8 @@ const config = {
   // --- Footer ---
   footer: {
     madeIn: "~hex",
-    year: "2026",
-    closing: "HAPPY BIRTHDAY :)",
+    year: String(currentYear),
+    closing: "you are now officially",
   },
 };
 

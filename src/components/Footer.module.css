@@ -109,6 +109,59 @@
   margin-top: 1rem;
 }
 
+.liveCounter {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.counterWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.timeUnit {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: var(--text-light);
+  background: var(--bg-dark-soft);
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  box-shadow: 4px 5px 0px var(--primary-coral);
+  transform: rotate(-1.5deg);
+  border: 2px solid var(--primary-coral);
+  transition: transform 0.2s ease;
+}
+
+.timeUnit:nth-child(4n+1) { transform: rotate(1deg); }
+.timeUnit:nth-child(4n+3) { transform: rotate(-2deg); }
+
+.timeUnit:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+.timeLabel {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: var(--highlight-amber);
+  margin-top: -0.2rem;
+}
+
+.timeSep {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--accent-rosegold);
+  opacity: 0.5;
+  margin: 0 0.2rem;
+}
+
 @media (max-width: 900px) {
   .footer { padding: 3rem 1.5rem 2rem; }
 }

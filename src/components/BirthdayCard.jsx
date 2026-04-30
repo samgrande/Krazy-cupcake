@@ -14,7 +14,7 @@ export default function BirthdayCard() {
         whileHover={{
           rotate: 0,
           scale: 1.02,
-          boxShadow: "8px 10px 0px #3D1C00",
+          boxShadow: "8px 10px 0px #361134",
           transition: { duration: 0.3 },
         }}
       >

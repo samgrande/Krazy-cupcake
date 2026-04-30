@@ -1,8 +1,60 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import config from "../config";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const [counter, setCounter] = useState("");
+
+  useEffect(() => {
+    const birthDate = new Date("2001-04-30T00:00:00");
+
+    const updateCounter = () => {
+      const now = new Date();
+      let years = now.getFullYear() - birthDate.getFullYear();
+      let months = now.getMonth() - birthDate.getMonth();
+      let days = now.getDate() - birthDate.getDate();
+      let hours = now.getHours() - birthDate.getHours();
+      let minutes = now.getMinutes() - birthDate.getMinutes();
+      let seconds = now.getSeconds() - birthDate.getSeconds();
+
+      if (seconds < 0) {
+        minutes--;
+        seconds += 60;
+      }
+      if (minutes < 0) {
+        hours--;
+        minutes += 60;
+      }
+      if (hours < 0) {
+        days--;
+        hours += 24;
+      }
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      const pad = (n) => String(n).padStart(2, "0");
+      setCounter({
+        years: pad(years),
+        months: pad(months),
+        days: pad(days),
+        hours: pad(hours),
+        minutes: pad(minutes),
+        seconds: pad(seconds)
+      });
+    };
+
+    updateCounter();
+    const interval = setInterval(updateCounter, 1000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <motion.footer
       className={styles.footer}
@@ -54,6 +106,30 @@ export default function Footer() {
         transition={{ duration: 0.7, delay: 0.5, type: "spring" }}
       >
         {config.footer.closing}
+      </motion.div>
+
+      <motion.div
+        className={styles.liveCounter}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.7, type: "spring" }}
+      >
+        {counter && (
+          <div className={styles.counterWrap}>
+            <div className={styles.timeUnit}>{counter.years} <span className={styles.timeLabel}>years</span></div>
+            <div className={styles.timeSep}>.</div>
+            <div className={styles.timeUnit}>{counter.months} <span className={styles.timeLabel}>months</span></div>
+            <div className={styles.timeSep}>.</div>
+            <div className={styles.timeUnit}>{counter.days} <span className={styles.timeLabel}>days</span></div>
+            <div className={styles.timeSep}>.</div>
+            <div className={styles.timeUnit}>{counter.hours} <span className={styles.timeLabel}>hours</span></div>
+            <div className={styles.timeSep}>.</div>
+            <div className={styles.timeUnit}>{counter.minutes} <span className={styles.timeLabel}>minutes</span></div>
+            <div className={styles.timeSep}>.</div>
+            <div className={styles.timeUnit}>{counter.seconds} <span className={styles.timeLabel}>seconds</span></div>
+          </div>
+        )}
       </motion.div>
 
       <motion.div

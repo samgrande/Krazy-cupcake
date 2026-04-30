@@ -3,12 +3,12 @@ import { useMemo } from "react";
 
 const SHAPES = ["heart", "star", "circle", "sparkle"];
 const COLORS = [
-  "#E8845C",
-  "#FFB347",
-  "#D4A574",
-  "#FADADD",
-  "#F5DEB3",
-  "#FF8C69",
+  "#361134",
+  "#b0228c",
+  "#ea3788",
+  "#e56b70",
+  "#f391a0",
+  "#FDF0F4",
 ];
 
 function Shape({ type, color, size }) {

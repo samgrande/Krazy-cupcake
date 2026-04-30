@@ -17,13 +17,13 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 15% 20%, var(--pop-yellow) 2px, transparent 2px),
-    radial-gradient(circle at 85% 15%, var(--pop-red) 2px, transparent 2px),
-    radial-gradient(circle at 50% 50%, var(--pop-green) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 25% 80%, var(--primary-coral) 2px, transparent 2px),
-    radial-gradient(circle at 75% 70%, var(--highlight-amber) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 10% 60%, var(--pop-yellow) 1px, transparent 1px),
-    radial-gradient(circle at 90% 40%, var(--pop-red) 1px, transparent 1px);
+    radial-gradient(circle at 15% 20%, #b0228c 2px, transparent 2px),
+    radial-gradient(circle at 85% 15%, #ea3788 2px, transparent 2px),
+    radial-gradient(circle at 50% 50%, #e56b70 1.5px, transparent 1.5px),
+    radial-gradient(circle at 25% 80%, #f391a0 2px, transparent 2px),
+    radial-gradient(circle at 75% 70%, #ea3788 1.5px, transparent 1.5px),
+    radial-gradient(circle at 10% 60%, #b0228c 1px, transparent 1px),
+    radial-gradient(circle at 90% 40%, #ea3788 1px, transparent 1px);
   opacity: 0.3;
   pointer-events: none;
 }
@@ -101,15 +101,10 @@
 
 .navPill {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
-  box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
   transition: transform 0.3s;
+  filter: grayscale(100%);
 }
 
 .navButton:hover .navPill {

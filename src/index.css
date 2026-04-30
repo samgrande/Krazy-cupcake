@@ -3,22 +3,22 @@
    ============================================ */
 
 :root {
-  /* Warm Palette */
-  --bg-cream: #FFF8F0;
-  --bg-dark: #1A0A00;
-  --bg-dark-soft: #2D1810;
-  --primary-coral: #E8845C;
-  --accent-rosegold: #D4A574;
-  --highlight-amber: #FFB347;
-  --text-brown: #3D1C00;
-  --text-light: #FFF0E0;
-  --subtle-wheat: #F5DEB3;
-  --subtle-pink: #FADADD;
-  --border-warm: #E8D5C4;
-  --shadow-warm: rgba(232, 132, 92, 0.15);
-  --pop-red: #FF6B6B;
-  --pop-yellow: #FFD93D;
-  --pop-green: #6BCB77;
+  /* Purple-Pink Palette */
+  --bg-cream: #FDF0F4;
+  --bg-dark: #361134;
+  --bg-dark-soft: #4A1848;
+  --primary-coral: #ea3788;
+  --accent-rosegold: #b0228c;
+  --highlight-amber: #f391a0;
+  --text-brown: #361134;
+  --text-light: #FDF0F4;
+  --subtle-wheat: #f9d0da;
+  --subtle-pink: #f391a0;
+  --border-warm: #e8a8b8;
+  --shadow-warm: rgba(234, 55, 136, 0.15);
+  --pop-red: #e56b70;
+  --pop-yellow: #ea3788;
+  --pop-green: #b0228c;
 
   /* Fonts */
   --font-heading: 'Playfair Display', Georgia, serif;
@@ -51,9 +51,9 @@ body {
   margin: 0;
   /* Subtle paper texture */
   background-image: 
-    radial-gradient(ellipse at 20% 50%, rgba(255, 180, 130, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(250, 218, 221, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(255, 179, 71, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(176, 34, 140, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(243, 145, 160, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(234, 55, 136, 0.05) 0%, transparent 50%);
 }
 
 /* Custom Scrollbar */
@@ -119,7 +119,7 @@ button {
   left: var(--nav-width);
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary-coral), var(--pop-yellow), var(--pop-red));
+  background: linear-gradient(90deg, #b0228c, #ea3788, #e56b70);
   transform-origin: left;
   z-index: 1000;
 }
@@ -134,7 +134,7 @@ button {
 /* Tape decoration */
 .tape {
   display: inline-block;
-  background: rgba(255, 217, 61, 0.5);
+  background: rgba(234, 55, 136, 0.35);
   padding: 2px 20px;
   transform: rotate(-2deg);
   font-family: var(--font-handwritten);
@@ -194,8 +194,8 @@ button {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(232, 132, 92, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(232, 132, 92, 0.4); }
+  0%, 100% { box-shadow: 0 0 20px rgba(234, 55, 136, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(234, 55, 136, 0.4); }
 }
 
 /* Responsive */

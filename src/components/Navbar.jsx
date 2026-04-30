@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import config from "../config";
 import styles from "./Navbar.module.css";
 
-const funkyColors = ["#FFD93D", "#FF6B6B", "#6BCB77", "#FFB347"];
+const funkyColors = ["#b0228c", "#ea3788", "#e56b70", "#f391a0"];
 const funkyEmojis = ["🎉", "📊", "📸", "💌"];
 
 export default function Navbar() {
@@ -65,7 +65,7 @@ export default function Navbar() {
                   }}
                   style={{ "--accent": funkyColors[i] }}
                 >
-                  <span className={styles.navPill} style={{ background: funkyColors[i] }}>
+                  <span className={styles.navPill}>
                     {funkyEmojis[i]}
                   </span>
                   <span className={styles.navLabel}>{item.label}</span>
